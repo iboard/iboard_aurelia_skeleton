@@ -11,10 +11,10 @@ describe('aurelia skeleton app', function () {
         protractor_1.browser.loadAndWaitForAureliaPage("http://localhost:9000");
     });
     it('should load the page and display the initial page title', function () {
-        expect(po_skeleton.getCurrentPageTitle()).toBe('Welcome | Aurelia');
+        expect(po_skeleton.getCurrentPageTitle()).toBe('Welcome | WTF!');
     });
     it('should display greeting', function () {
-        expect(po_welcome.getGreeting()).toBe('Welcome to the Aurelia Navigation App!');
+        expect(po_welcome.getGreeting()).toBe('Welcome');
     });
     it('should automatically write down the fullname', function () {
         po_welcome.setFirstname('Rob');
@@ -27,6 +27,6 @@ describe('aurelia skeleton app', function () {
     });
     it('should navigate to users page', function () {
         po_skeleton.navigateTo('#/users');
-        expect(po_skeleton.getCurrentPageTitle()).toBe('Github Users | Aurelia');
+        expect(po_skeleton.getCurrentPageTitle()).toBe('Users | WTF!');
     });
 });
