@@ -33,8 +33,8 @@ describe('iboard skeleton app', function() {
     expect(welcome_page.openAlertDialog()).toBe(true);
   });
 
-  it('should navigate to users page', () => {
-    page_skeleton.navigateTo('#/users');
-    expect(page_skeleton.getCurrentPageTitle()).toBe('Users | WTF!');
+  it('should navigate to user page', () => {
+    page_skeleton.navigateTo('#/user');
+    expect(page_skeleton.getCurrentPageTitle()).toBe('User | WTF!');
   });
 });

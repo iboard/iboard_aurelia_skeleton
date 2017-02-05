@@ -33,7 +33,7 @@ describe('the Child Router module', () => {
   });
 
   it('should have a users route', () => {
-     expect(sut.router.routes).toContain({ route: 'users', name: 'users', moduleId: 'users', nav: true, title:'Users' });
+     expect(sut.router.routes).toContain({ route: 'user', name: 'user', moduleId: 'user', nav: true, title:'User' });
   });
 
   it('should have a child router route', () => {
