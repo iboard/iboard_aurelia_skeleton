@@ -1,15 +1,15 @@
 "use strict";
 var protractor_1 = require("aurelia-protractor-plugin/protractor");
-var PageObject_Skeleton = (function () {
-    function PageObject_Skeleton() {
+var PageSkeleton = (function () {
+    function PageSkeleton() {
     }
-    PageObject_Skeleton.prototype.getCurrentPageTitle = function () {
+    PageSkeleton.prototype.getCurrentPageTitle = function () {
         return protractor_1.browser.getTitle();
     };
-    PageObject_Skeleton.prototype.navigateTo = function (href) {
+    PageSkeleton.prototype.navigateTo = function (href) {
         protractor_1.element(protractor_1.by.css('a[href="' + href + '"]')).click();
         return protractor_1.browser.waitForRouterComplete();
     };
-    return PageObject_Skeleton;
+    return PageSkeleton;
 }());
-exports.PageObject_Skeleton = PageObject_Skeleton;
+exports.PageSkeleton = PageSkeleton;

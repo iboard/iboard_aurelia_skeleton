@@ -2,31 +2,31 @@
 var welcome_po_1 = require("./welcome.po");
 var skeleton_po_1 = require("./skeleton.po");
 var protractor_1 = require("aurelia-protractor-plugin/protractor");
-describe('aurelia skeleton app', function () {
-    var po_welcome;
-    var po_skeleton;
+describe('iboard skeleton app', function () {
+    var welcome_page;
+    var page_skeleton;
     beforeEach(function () {
-        po_skeleton = new skeleton_po_1.PageObject_Skeleton();
-        po_welcome = new welcome_po_1.PageObject_Welcome();
+        page_skeleton = new skeleton_po_1.PageSkeleton();
+        welcome_page = new welcome_po_1.WelcomePage();
         protractor_1.browser.loadAndWaitForAureliaPage("http://localhost:9000");
     });
     it('should load the page and display the initial page title', function () {
-        expect(po_skeleton.getCurrentPageTitle()).toBe('Welcome | WTF!');
+        expect(page_skeleton.getCurrentPageTitle()).toBe('Welcome | WTF!');
     });
     it('should display greeting', function () {
-        expect(po_welcome.getGreeting()).toBe('Welcome');
+        expect(welcome_page.getGreeting()).toBe('Welcome');
     });
     it('should automatically write down the fullname', function () {
-        po_welcome.setFirstname('Rob');
-        po_welcome.setLastname('Eisenberg');
+        welcome_page.setFirstname('Frank');
+        welcome_page.setLastname('Zappa');
         protractor_1.browser.sleep(200);
-        expect(po_welcome.getFullname()).toBe('ROB EISENBERG');
+        expect(welcome_page.getFullname()).toBe('FRANK ZAPPA');
     });
     it('should show alert message when clicking submit button', function () {
-        expect(po_welcome.openAlertDialog()).toBe(true);
+        expect(welcome_page.openAlertDialog()).toBe(true);
     });
     it('should navigate to users page', function () {
-        po_skeleton.navigateTo('#/users');
-        expect(po_skeleton.getCurrentPageTitle()).toBe('Users | WTF!');
+        page_skeleton.navigateTo('#/users');
+        expect(page_skeleton.getCurrentPageTitle()).toBe('Users | WTF!');
     });
 });

@@ -1,42 +1,40 @@
-import {PageObject_Welcome} from './welcome.po';
-import {PageObject_Skeleton} from './skeleton.po';
+import {WelcomePage} from './welcome.po';
+import {PageSkeleton} from './skeleton.po';
 import {browser, element, by, By, $, $$, ExpectedConditions} from 'aurelia-protractor-plugin/protractor';
 
-describe('aurelia skeleton app', function() {
-  let po_welcome: PageObject_Welcome;
-  let po_skeleton: PageObject_Skeleton;
+describe('iboard skeleton app', function() {
+  let welcome_page: WelcomePage;
+  let page_skeleton: PageSkeleton;
 
   beforeEach( () => {
-    po_skeleton = new PageObject_Skeleton();
-    po_welcome = new PageObject_Welcome();
+    page_skeleton = new PageSkeleton();
+    welcome_page = new WelcomePage();
 
     browser.loadAndWaitForAureliaPage("http://localhost:9000");
   });
 
   it('should load the page and display the initial page title', () => {
-    expect(po_skeleton.getCurrentPageTitle()).toBe('Welcome | WTF!');
+    expect(page_skeleton.getCurrentPageTitle()).toBe('Welcome | WTF!');
   });
 
   it('should display greeting', () => {
-    expect(po_welcome.getGreeting()).toBe('Welcome');
+    expect(welcome_page.getGreeting()).toBe('Welcome');
   });
 
   it('should automatically write down the fullname', () => {
-    po_welcome.setFirstname('Rob');
-    po_welcome.setLastname('Eisenberg');
+    welcome_page.setFirstname('Frank');
+    welcome_page.setLastname('Zappa');
 
-    // For now there is a timing issue with the binding.
-    // Until resolved we will use a short sleep to overcome the issue.
-    browser.sleep(200);
-    expect(po_welcome.getFullname()).toBe('ROB EISENBERG');
+    //browser.sleep(200); -- no longer needed. framework fixed, 2016-02-05
+    expect(welcome_page.getFullname()).toBe('FRANK ZAPPA');
   });
 
   it('should show alert message when clicking submit button', () => {
-    expect(po_welcome.openAlertDialog()).toBe(true);
+    expect(welcome_page.openAlertDialog()).toBe(true);
   });
 
   it('should navigate to users page', () => {
-    po_skeleton.navigateTo('#/users');
-    expect(po_skeleton.getCurrentPageTitle()).toBe('Users | WTF!');
+    page_skeleton.navigateTo('#/users');
+    expect(page_skeleton.getCurrentPageTitle()).toBe('Users | WTF!');
   });
 });
