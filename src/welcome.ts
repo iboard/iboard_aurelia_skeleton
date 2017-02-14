@@ -2,6 +2,7 @@
 
 export class Welcome {
   public heading = 'Welcome';
+  public sub_heading = 'Please tell us who is weighed down with sorrow';
   public firstName = 'John';
   public lastName = 'Doe';
   private previousValue = this.fullName;

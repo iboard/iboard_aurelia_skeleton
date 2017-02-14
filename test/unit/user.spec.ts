@@ -2,7 +2,7 @@ import {User} from 'src/user';
 import {HttpClient} from 'aurelia-fetch-client';
 
 class HttpStub {
-  user: any[];
+  user: any;
   
   fetch(url) {
     return new Promise(resolve => {
@@ -21,7 +21,7 @@ describe('the User module', () => {
 
   it('sets fetch response to user', (done) => {
     var http = createHttpStub(),
-        sut = new Users(<HttpClient>http),
+        sut = new User(<HttpClient>http),
         userStub = [1],
         userFake = [2];
         

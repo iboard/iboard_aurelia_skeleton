@@ -15,18 +15,19 @@ describe('iboard skeleton app', function () {
     });
     it('should display greeting', function () {
         expect(welcome_page.getGreeting()).toBe('Welcome');
+        expect(welcome_page.getSubGreeting()).toBe('Please tell us who is weighed down with sorrow');
     });
     it('should automatically write down the fullname', function () {
         welcome_page.setFirstname('Frank');
         welcome_page.setLastname('Zappa');
-        protractor_1.browser.sleep(200);
+        protractor_1.browser.sleep(50);
         expect(welcome_page.getFullname()).toBe('FRANK ZAPPA');
     });
     it('should show alert message when clicking submit button', function () {
         expect(welcome_page.openAlertDialog()).toBe(true);
     });
-    it('should navigate to users page', function () {
-        page_skeleton.navigateTo('#/users');
-        expect(page_skeleton.getCurrentPageTitle()).toBe('Users | WTF!');
+    it('should navigate to user page', function () {
+        page_skeleton.navigateTo('#/user');
+        expect(page_skeleton.getCurrentPageTitle()).toBe('User | WTF!');
     });
 });

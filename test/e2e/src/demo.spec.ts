@@ -19,13 +19,14 @@ describe('iboard skeleton app', function() {
 
   it('should display greeting', () => {
     expect(welcome_page.getGreeting()).toBe('Welcome');
+    expect(welcome_page.getSubGreeting()).toBe('Please tell us who is weighed down with sorrow');
   });
 
   it('should automatically write down the fullname', () => {
     welcome_page.setFirstname('Frank');
     welcome_page.setLastname('Zappa');
 
-    //browser.sleep(200); -- no longer needed. framework fixed, 2016-02-05
+    browser.sleep(50); // should be fixed in the testing framework but isn't yet.
     expect(welcome_page.getFullname()).toBe('FRANK ZAPPA');
   });
 

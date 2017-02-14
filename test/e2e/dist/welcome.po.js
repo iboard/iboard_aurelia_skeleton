@@ -6,6 +6,9 @@ var WelcomePage = (function () {
     WelcomePage.prototype.getGreeting = function () {
         return protractor_1.element(protractor_1.by.tagName('h2')).getText();
     };
+    WelcomePage.prototype.getSubGreeting = function () {
+        return protractor_1.element(protractor_1.by.tagName('h3')).getText();
+    };
     WelcomePage.prototype.setFirstname = function (value) {
         var firstName = protractor_1.element(protractor_1.by.valueBind('firstName'));
         return firstName.clear().then(function () { return firstName.sendKeys(value); });

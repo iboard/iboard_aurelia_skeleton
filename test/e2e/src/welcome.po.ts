@@ -5,6 +5,10 @@ export class WelcomePage {
     return element(by.tagName('h2')).getText();
   }
 
+  getSubGreeting() {
+    return element(by.tagName('h3')).getText();
+  }
+
   setFirstname(value) {
     let firstName = element(by.valueBind('firstName'));
     return firstName.clear().then(() => firstName.sendKeys(value));
