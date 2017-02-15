@@ -7,7 +7,7 @@ export class App {
     config.title = 'WTF!';
     config.map([
       { route: ['', 'welcome'], name: 'welcome',      moduleId: 'welcome',      nav: true, title: 'Welcome' },
-      { route: 'user',         name: 'user',        moduleId: 'user',        nav: true, title: 'User' },
+      { route: 'user',          name: 'user',         moduleId: 'user',         nav: true, title: 'User' },
       { route: 'child-router',  name: 'child-router', moduleId: 'child-router', nav: true, title: 'Router' }
     ]);
 
